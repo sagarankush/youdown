@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'index.css' %}">
+    <title>YouDown</title>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#" class="active">Home</a>
+        <a href="{% static 'aboutus.html' %}">AboutUs</a>
+    </div>
+    <div class="container">
+        <div class="heading">Enter URL</div>
+        <form class="urlform container" action="sendurl" method="post">
+            {% csrf_token %}
+            {{form}}
+            <input name="submitbtn" class="urlbtn" type="submit" value="Enter">
+        </form>
+        <div>
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+</body>
+</html>

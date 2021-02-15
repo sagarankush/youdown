@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+
+    <table>
+        <tr>
+          <th>File Size</th>
+          <th>Format ID</th>
+          <th>Format</th>
+          <th>URL</th>
+        </tr>
+    {% for f in formats %}
+        <tr>
+          <td> {{f.filesize}} </td>
+          <td> {{f.format_id}} </td>
+          <td> {{f.format}} </td>
+          <td><a href="{{f.url}}">link</a></td>
+        </tr>
+    {% endfor %}
+      </table> 
+
+{% endblock %}
